@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Students' Archaeological Society</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090a0b;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background: rgba(5,6,7,0.95);
+    border-bottom: 1px solid rgba(190,140,55,0.25);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-inner {
+    width: 94%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: #ddd;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c99a4a;
+}
+
+.language {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    color: #c99a4a;
+    font-size: 12px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    height: 650px;
+    position: relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.25)
+        ),
+        url("images/hero.jpg") center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 94%;
+    max-width: 1400px;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.hero h1 {
+    max-width: 720px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: clamp(38px, 5vw, 68px);
+    line-height: 1.05;
+    color: white;
+    text-transform: uppercase;
+}
+
+.gold-line {
+    width: 65px;
+    height: 2px;
+    background: #c49343;
+    margin: 25px 0;
+}
+
+.hero p {
+    max-width: 540px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 15px 25px;
+    background: #b98432;
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #d4aa65;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container {
+    width: 94%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.section {
+    padding: 70px 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.view-all {
+    color: #b98b43;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* =========================
+   EXPEDITIONS
+========================= */
+
+.expeditions {
+    margin-top: -35px;
+    position: relative;
+    z-index: 5;
+}
+
+.expedition-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.card {
+    background: #0d0f10;
+    border: 1px solid #292b2c;
+}
+
+.card-image {
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.card-content .category {
+    color: #b98b43;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.card-content p {
+    margin-top: 12px;
+    color: #999;
+    font-size: 13px;
+}
+
+/* =========================
+   FEATURE BLOCKS
+========================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    border: 1px solid #292b2c;
+}
+
+.feature {
+    min-height: 270px;
+    padding: 28px;
+    border-right: 1px solid #292b2c;
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.feature p {
+    color: #999;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.artifact-image {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+}
+
+/* =========================
+   BIG CATEGORY GRID
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid #292b2c;
+}
+
+.category {
+    min-height: 170px;
+    padding: 30px;
+    border-right: 1px solid #292b2c;
+    border-bottom: 1px solid #292b2c;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+}
+
+.category:hover {
+    background: #111415;
+}
+
+.category-icon {
+    font-size: 38px;
+    color: #b98b43;
+    margin-bottom: 20px;
+}
+
+.category h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.category p {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.gallery-item {
+    height: 220px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border: 1px solid #292b2c;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================
+   LIBRARY
+========================= */
+
+.library {
+    background: #0c0e0f;
+    border: 1px solid #292b2c;
+    padding: 35px;
+}
+
+.library-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.library-item {
+    border: 1px solid #292b2c;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.library-item span {
+    font-family: Georgia, serif;
+}
+
+.library-item a {
+    color: #c29348;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #292b2c;
+    padding: 50px 0;
+    margin-top: 50px;
+    background: #060708;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #c29348;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        height: 600px;
+    }
+
+    .expedition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        border-right: none;
+        border-bottom: 1px solid #292b2c;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .library-list {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        height: 62px;
+    }
+
+    .logo-text {
+        font-size: 11px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero {
+        height: 580px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="header-inner">
+
+    <div class="logo">
+
+        <img src="images/logo.png" alt="Logo">
+
+        <div class="logo-text">
+            STUDENTS'<br>
+            ARCHAEOLOGICAL<br>
+            SOCIETY
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="#about">ABOUT US</a>
+        <a href="#expeditions">EXPEDITIONS</a>
+        <a href="#research">RESEARCH</a>
+        <a href="#experiments">EXPERIMENTS</a>
+        <a href="#publications">PUBLICATIONS</a>
+        <a href="#library">LIBRARY</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <div class="language">
+        EN ▾
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="about">
+
+<div class="hero-content">
+
+    <h1>
+        Exploring the past<br>
+        to understand<br>
+        the present
+    </h1>
+
+    <div class="gold-line"></div>
+
+    <p>
+        We are a community of students, archaeologists
+        and researchers dedicated to archaeological
+        research, education, fieldwork and the
+        preservation of cultural heritage.
+    </p>
+
+    <a href="#expeditions" class="button">
+        Explore our work →
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     EXPEDITIONS
+========================= -->
+
+<section class="section expeditions" id="expeditions">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Latest Expeditions</h2>
+
+    <a href="#" class="view-all">
+        View all →
+    </a>
+
+</div>
+
+
+<div class="expedition-grid">
+
+    <article class="card">
+
+        <div class="card-image">
+            <img src="images/expedition-1.jpg">
+        </div>
+
+        <div class="card-content">
+
+            <h3>Khodosivka</h3>
+
+            <div class="category">
+                Early Iron Age
+            </div>
+
+            <p>
+                Archaeological field research
+                and excavation season 2026.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-image">
+            <img src="images/expedition-2.jpg">
+        </div>
+
+        <div class="card-content">
+
+            <h3>Kyiv Region</h3>
+
+            <div class="category">
+                Medieval Archaeology
+            </div>
+
+            <p>
+                Excavation and documentation
+                of archaeological structures.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-image">
+            <img src="images/expedition-3.jpg">
+        </div>
+
+        <div class="card-content">
+
+            <h3>Field Research</h3>
+
+            <div class="category">
+                Archaeological Survey
+            </div>
+
+            <p>
+                Survey, documentation and
+                archaeological sampling.
+            </p>
+
+        </div>
+
+    </article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FEATURE BLOCK
+========================= -->
+
+<section class="section" id="research">
+
+<div class="container">
+
+<div class="feature-grid">
+
+    <div class="feature">
+
+        <h3>News & Events</h3>
+
+        <p>
+            Latest discoveries, lectures,
+            conferences, expeditions and
+            activities of the society.
+        </p>
+
+        <br>
+
+        <a href="#" class="view-all">
+            View all news →
+        </a>
+
+    </div>
+
+
+    <div class="feature">
+
+        <h3>Artifact of the Month</h3>
+
+        <img
+            src="images/artifact.jpg"
+            class="artifact-image"
+            alt="Artifact"
+        >
+
+    </div>
+
+
+    <div class="feature">
+
+        <h3>Our Research</h3>
+
+        <p>
+            Archaeological research,
+            scientific publications,
+            experimental archaeology
+            and field methodology.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MAIN CATEGORIES
+========================= -->
+
+<section class="section" id="experiments">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Explore the Society</h2>
+
+</div>
+
+
+<div class="category-grid">
+
+    <a class="category" href="#expeditions">
+
+        <div class="category-icon">⚒</div>
+
+        <h3>Expeditions</h3>
+
+        <p>
+            Archaeological fieldwork,
+            excavations and surveys.
+        </p>
+
+    </a>
+
+
+    <a class="category" href="#research">
+
+        <div class="category-icon">◈</div>
+
+        <h3>Research</h3>
+
+        <p>
+            Scientific studies and
+            archaeological research.
+        </p>
+
+    </a>
+
+
+    <a class="category" href="#experiments">
+
+        <div class="category-icon">⚗</div>
+
+        <h3>Experiments</h3>
+
+        <p>
+            Experimental archaeology
+            and reconstruction.
+        </p>
+
+    </a>
+
+
+    <a class="category" href="#publications">
+
+        <div class="category-icon">▣</div>
+
+        <h3>Publications</h3>
+
+        <p>
+            Articles, reports and
+            scientific papers.
+        </p>
+
+    </a>
+
+
+    <a class="category" href="#library">
+
+        <div class="category-icon">▤</div>
+
+        <h3>Library</h3>
+
+        <p>
+            Archaeological books,
+            articles and sources.
+        </p>
+
+    </a>
+
+
+    <a class="category" href="#gallery">
+
+        <div class="category-icon">▧</div>
+
+        <h3>Photo Archive</h3>
+
+        <p>
+            Photographs from expeditions,
+            research and experiments.
+        </p>
+
+    </a>
+
+
+    <a class="category" href="#models">
+
+        <div class="category-icon">◇</div>
+
+        <h3>3D Models</h3>
+
+        <p>
+            Digital models of
+            archaeological artefacts.
+        </p>
+
+    </a>
+
+
+    <a class="category" href="#contact">
+
+        <div class="category-icon">♢</div>
+
+        <h3>Support Us</h3>
+
+        <p>
+            Support archaeological
+            research and education.
+        </p>
+
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="section" id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>From the Field</h2>
+
+    <a href="#" class="view-all">
+        Full gallery →
+    </a>
+
+</div>
+
+
+<div class="gallery">
+
+    <div class="gallery-item">
+        <img src="images/gallery-1.jpg">
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/gallery-2.jpg">
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/gallery-3.jpg">
+    </div>
+
+    <div class="gallery-item">
+        <img src="images/gallery-4.jpg">
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     VIDEO
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Watch Our Work</h2>
+
+</div>
+
+<div class="video-wrapper">
+
+    <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Archaeological video"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LIBRARY
+========================= -->
+
+<section class="section" id="library">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Archaeological Library</h2>
+
+    <a href="#" class="view-all">
+        Open library →
+    </a>
+
+</div>
+
+
+<div class="library">
+
+    <div class="library-list">
+
+        <div class="library-item">
+
+            <span>
+                Archaeology of Eastern Europe
+            </span>
+
+            <a
+                href="https://example.com/document.pdf"
+                target="_blank">
+                PDF →
+            </a>
+
+        </div>
+
+
+        <div class="library-item">
+
+            <span>
+                Early Iron Age Studies
+            </span>
+
+            <a
+                href="https://example.com/document.pdf"
+                target="_blank">
+                PDF →
+            </a>
+
+        </div>
+
+
+        <div class="library-item">
+
+            <span>
+                Experimental Archaeology
+            </span>
+
+            <a
+                href="https://example.com/document.pdf"
+                target="_blank">
+                PDF →
+            </a>
+
+        </div>
+
+
+        <div class="library-item">
+
+            <span>
+                Archaeological Field Methods
+            </span>
+
+            <a
+                href="https://example.com/document.pdf"
+                target="_blank">
+                PDF →
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PUBLICATIONS
+========================= -->
+
+<section class="section" id="publications">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Scientific Publications</h2>
+
+</div>
+
+<div class="expedition-grid">
+
+    <article class="card">
+
+        <div class="card-content">
+
+            <div class="category">
+                Article
+            </div>
+
+            <h3>
+                Archaeological Research
+                of Settlement Structures
+            </h3>
+
+            <p>
+                Author Name · 2026
+            </p>
+
+            <br>
+
+            <a href="#" class="view-all">
+                Read publication →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-content">
+
+            <div class="category">
+                Report
+            </div>
+
+            <h3>
+                Field Research
+                2025–2026
+            </h3>
+
+            <p>
+                Archaeological Expedition
+            </p>
+
+            <br>
+
+            <a href="#" class="view-all">
+                Open report →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-content">
+
+            <div class="category">
+                Research
+            </div>
+
+            <h3>
+                Experimental Archaeology
+            </h3>
+
+            <p>
+                Society Research Group
+            </p>
+
+            <br>
+
+            <a href="#" class="view-all">
+                Learn more →
+            </a>
+
+        </div>
+
+    </article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<footer id="contact">
+
+<div class="container">
+
+<div class="footer-grid">
+
+    <div>
+
+        <h3>
+            Students' Archaeological Society
+        </h3>
+
+        <p>
+            Archaeology · Research · Education ·
+            Experimental Archaeology
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Navigation</h3>
+
+        <p>
+            <a href="#about">About Us</a><br>
+            <a href="#expeditions">Expeditions</a><br>
+            <a href="#research">Research</a><br>
+            <a href="#library">Library</a><br>
+            <a href="#gallery">Gallery</a>
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Follow Us</h3>
+
+        <p>
+            <a href="#" target="_blank">Instagram</a><br>
+            <a href="#" target="_blank">Telegram</a><br>
+            <a href="#" target="_blank">YouTube</a><br>
+            <a href="#" target="_blank">Facebook</a>
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
